@@ -1,4 +1,0 @@
-2025-07-08 13:59:21,865 - GeneRegulationLogger - INFO - === 训练开始 ===
-2025-07-08 13:59:21,865 - GeneRegulationLogger - INFO - 配置参数并加载数据
-2025-07-08 13:59:22,161 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
-2025-07-08 13:59:22,165 - GeneRegulationLogger - INFO - 网络密度: 0.0103
