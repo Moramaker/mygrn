@@ -1,0 +1,441 @@
+2025-07-08 11:45:40 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 11:45:40 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 11:45:40 - GeneRegulationLogger - INFO - === 阶段1：三视图对比预训练 (50轮) ===
+2025-07-08 11:45:42 - GeneRegulationLogger - INFO - === 阶段1完成: 最佳损失 6.0290 ===
+2025-07-08 11:45:42 - GeneRegulationLogger - INFO - === 阶段2：下游任务微调 (50轮) ===
+2025-07-08 11:46:30 - GeneRegulationLogger - INFO - 训练完成! 最终AUC: 0.7803 | 耗时: 0.84分钟
+2025-07-08 11:54:42 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 11:54:42 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 11:58:56 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 11:58:56 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:00:29 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:00:29 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:00:29 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:00:30 - GeneRegulationLogger - INFO - === 阶段1：三视图对比预训练 (50轮) ===
+2025-07-08 12:03:20 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:03:20 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:03:21 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:03:21 - GeneRegulationLogger - INFO - === 阶段1：三视图对比预训练 (50轮) ===
+2025-07-08 12:08:12 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:08:12 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:08:12 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:08:12 - GeneRegulationLogger - INFO - === 阶段1：三视图对比预训练 (50轮) ===
+2025-07-08 12:14:43 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:14:43 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:14:43 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:14:44 - GeneRegulationLogger - INFO - === 阶段1：三视图对比预训练 (50轮) ===
+2025-07-08 12:16:07 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:16:07 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:16:07 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:16:07 - GeneRegulationLogger - INFO - === 阶段1：三视图对比预训练 (50轮) ===
+2025-07-08 12:18:04 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:18:04 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:18:04 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:18:15 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:18:15 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:18:15 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:18:36 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:18:36 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:18:36 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:19:08 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:19:08 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:19:08 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:22:07 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:22:07 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:22:07 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:23:11 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:23:11 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:23:11 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:23:12 - GeneRegulationLogger - INFO - === 阶段1：三视图对比预训练 (50轮) ===
+2025-07-08 12:23:14 - GeneRegulationLogger - INFO - === 阶段1完成: 最佳损失 6.0556 ===
+2025-07-08 12:23:14 - GeneRegulationLogger - INFO - === 阶段2：下游任务微调 (50轮) ===
+2025-07-08 12:27:57 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:27:57 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:27:57 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:27:57 - GeneRegulationLogger - INFO - === 阶段1：三视图对比预训练 (50轮) ===
+2025-07-08 12:27:59 - GeneRegulationLogger - INFO - === 阶段1完成: 最佳损失 6.1160 ===
+2025-07-08 12:27:59 - GeneRegulationLogger - INFO - === 阶段2：下游任务微调 (50轮) ===
+2025-07-08 12:28:28 - GeneRegulationLogger - INFO - === 最终测试评估 ===
+2025-07-08 12:28:28 - GeneRegulationLogger - INFO - 训练完成! 验证集最佳AUC: 0.5335 | 测试集AUC: 0.5312 | 耗时: 0.53分钟
+2025-07-08 12:29:37 - GeneRegulationLogger - INFO - === 训练开始 ===
+2025-07-08 12:29:37 - GeneRegulationLogger - INFO - 配置参数并加载数据
+2025-07-08 12:29:37 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - 基因调控网络训练系统 - 启动
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - 配置参数:
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO -   - 网络类型: Non-Specific
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO -   - 细胞类型: mHSC-L
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO -   - 转录因子: 500
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO -   - 训练轮数: 100
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO -   - 批次大小: 32
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO -   - 学习率: 0.001
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - === 数据准备 ===
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - 数据属性验证通过
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - === 模型初始化 ===
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - 使用设备: cuda
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - 训练阶段: 对比预训练 50轮, 下游微调 50轮
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - === 阶段1：三视图对比预训练 (50轮) ===
+2025-07-08 12:31:59 - GeneRegulationLogger - INFO - Epoch 1: 新最佳损失 7.5569 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 2: 新最佳损失 7.5474 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 3: 新最佳损失 7.5384 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 4: 新最佳损失 7.5293 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 5: 新最佳损失 7.5189 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 6: 新最佳损失 7.5062 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 7: 新最佳损失 7.4899 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 8: 新最佳损失 7.4682 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 9: 新最佳损失 7.4393 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 10: 新最佳损失 7.4013 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 11: 新最佳损失 7.3529 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 12: 新最佳损失 7.2936 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 13: 新最佳损失 7.2252 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 14: 新最佳损失 7.1521 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 15: 新最佳损失 7.0789 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 16: 新最佳损失 7.0099 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 17: 新最佳损失 6.9476 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 18: 新最佳损失 6.8932 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 19: 新最佳损失 6.8459 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 20: 新最佳损失 6.8034 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 21: 新最佳损失 6.7648 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 22: 新最佳损失 6.7299 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 23: 新最佳损失 6.6972 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 24: 新最佳损失 6.6658 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 25: 新最佳损失 6.6352 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 26: 新最佳损失 6.6054 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 27: 新最佳损失 6.5759 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 28: 新最佳损失 6.5460 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 29: 新最佳损失 6.5151 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 30: 新最佳损失 6.4827 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 31: 新最佳损失 6.4487 | 模型已保存
+2025-07-08 12:32:00 - GeneRegulationLogger - INFO - Epoch 32: 新最佳损失 6.4136 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 33: 新最佳损失 6.3775 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 34: 新最佳损失 6.3407 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 35: 新最佳损失 6.3042 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 36: 新最佳损失 6.2705 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 37: 新最佳损失 6.2536 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 38: 新最佳损失 6.2482 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 39: 新最佳损失 6.1824 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 41: 新最佳损失 6.1443 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 42: 新最佳损失 6.1433 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 43: 新最佳损失 6.1014 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 44: 新最佳损失 6.0943 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 45: 新最佳损失 6.0663 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 46: 新最佳损失 6.0493 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 47: 新最佳损失 6.0295 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 48: 新最佳损失 6.0059 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 49: 新最佳损失 5.9967 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - Epoch 50: 新最佳损失 5.9686 | 模型已保存
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - === 阶段1完成: 最佳损失 5.9686 ===
+2025-07-08 12:32:01 - GeneRegulationLogger - INFO - === 阶段2：下游任务微调 (50轮) ===
+2025-07-08 12:32:02 - GeneRegulationLogger - INFO - Epoch 1: 新最佳模型 | AUC: 0.5127 | AUPRC: 0.5177
+2025-07-08 12:32:02 - GeneRegulationLogger - INFO - Epoch 2: 新最佳模型 | AUC: 0.5152 | AUPRC: 0.5187
+2025-07-08 12:32:04 - GeneRegulationLogger - INFO - Epoch 4: 新最佳模型 | AUC: 0.5259 | AUPRC: 0.5301
+2025-07-08 12:32:07 - GeneRegulationLogger - INFO - Epoch 10: 新最佳模型 | AUC: 0.5273 | AUPRC: 0.5342
+2025-07-08 12:32:20 - GeneRegulationLogger - INFO - Epoch 30: 新最佳模型 | AUC: 0.5285 | AUPRC: 0.5376
+2025-07-08 12:32:22 - GeneRegulationLogger - INFO - Epoch 34: 新最佳模型 | AUC: 0.5299 | AUPRC: 0.5368
+2025-07-08 12:32:30 - GeneRegulationLogger - INFO - Epoch 47: 新最佳模型 | AUC: 0.5312 | AUPRC: 0.5344
+2025-07-08 12:32:31 - GeneRegulationLogger - INFO - Epoch 48: 新最佳模型 | AUC: 0.5319 | AUPRC: 0.5365
+2025-07-08 12:32:32 - GeneRegulationLogger - INFO - === 最终测试评估 ===
+2025-07-08 12:32:32 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:32:32 - GeneRegulationLogger - INFO - 训练完成!
+2025-07-08 12:32:32 - GeneRegulationLogger - INFO -   - 耗时: 0.56分钟
+2025-07-08 12:32:32 - GeneRegulationLogger - INFO -   - 验证集最佳AUC: 0.5319
+2025-07-08 12:32:32 - GeneRegulationLogger - INFO -   - 验证集最佳AUPRC: 0.5365
+2025-07-08 12:32:32 - GeneRegulationLogger - INFO -   - 测试集AUC: 0.5277
+2025-07-08 12:32:32 - GeneRegulationLogger - INFO -   - 测试集AUPRC: 0.5376
+2025-07-08 12:32:32 - GeneRegulationLogger - INFO - 模型已保存至: ./model.pt
+2025-07-08 12:32:32 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - 基因调控网络训练系统 - 启动
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - 配置参数:
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO -   - 网络类型: Non-Specific
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO -   - 细胞类型: mHSC-L
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO -   - 转录因子: 500
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO -   - 训练轮数: 500
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO -   - 批次大小: 32
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO -   - 学习率: 0.001
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - === 数据准备 ===
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - 数据属性验证通过
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - === 模型初始化 ===
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - 使用设备: cuda
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - 训练阶段: 对比预训练 250轮, 下游微调 250轮
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - === 阶段1：三视图对比预训练 (250轮) ===
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - Epoch 1: 新最佳损失 7.5473 | 模型已保存
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - Epoch 2: 新最佳损失 7.5366 | 模型已保存
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - Epoch 3: 新最佳损失 7.5267 | 模型已保存
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - Epoch 4: 新最佳损失 7.5163 | 模型已保存
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - Epoch 5: 新最佳损失 7.5040 | 模型已保存
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - Epoch 6: 新最佳损失 7.4887 | 模型已保存
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - Epoch 7: 新最佳损失 7.4689 | 模型已保存
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - Epoch 8: 新最佳损失 7.4428 | 模型已保存
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - Epoch 9: 新最佳损失 7.4086 | 模型已保存
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - Epoch 10: 新最佳损失 7.3644 | 模型已保存
+2025-07-08 12:32:57 - GeneRegulationLogger - INFO - Epoch 11: 新最佳损失 7.3089 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 12: 新最佳损失 7.2431 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 13: 新最佳损失 7.1700 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 14: 新最佳损失 7.0948 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 15: 新最佳损失 7.0222 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 16: 新最佳损失 6.9553 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 17: 新最佳损失 6.8950 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 18: 新最佳损失 6.8412 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 19: 新最佳损失 6.7927 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 20: 新最佳损失 6.7484 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 21: 新最佳损失 6.7074 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 22: 新最佳损失 6.6689 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 23: 新最佳损失 6.6327 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 24: 新最佳损失 6.5975 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 25: 新最佳损失 6.5622 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 26: 新最佳损失 6.5256 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 27: 新最佳损失 6.4870 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 28: 新最佳损失 6.4466 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 29: 新最佳损失 6.4053 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 30: 新最佳损失 6.3648 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 31: 新最佳损失 6.3251 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 32: 新最佳损失 6.2882 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 33: 新最佳损失 6.2555 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 34: 新最佳损失 6.2325 | 模型已保存
+2025-07-08 12:32:58 - GeneRegulationLogger - INFO - Epoch 36: 新最佳损失 6.1830 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 38: 新最佳损失 6.1791 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 39: 新最佳损失 6.1580 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 40: 新最佳损失 6.1275 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 41: 新最佳损失 6.1095 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 42: 新最佳损失 6.0955 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 43: 新最佳损失 6.0805 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 44: 新最佳损失 6.0505 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 45: 新最佳损失 6.0464 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 46: 新最佳损失 6.0178 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 47: 新最佳损失 6.0113 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 48: 新最佳损失 5.9820 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 49: 新最佳损失 5.9754 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 50: 新最佳损失 5.9491 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 51: 新最佳损失 5.9373 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 52: 新最佳损失 5.9155 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 53: 新最佳损失 5.9031 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 54: 新最佳损失 5.8807 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 55: 新最佳损失 5.8711 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 56: 新最佳损失 5.8506 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 57: 新最佳损失 5.8383 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 58: 新最佳损失 5.8225 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 59: 新最佳损失 5.8114 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 60: 新最佳损失 5.7987 | 模型已保存
+2025-07-08 12:32:59 - GeneRegulationLogger - INFO - Epoch 61: 新最佳损失 5.7820 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 62: 新最佳损失 5.7752 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 63: 新最佳损失 5.7620 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 64: 新最佳损失 5.7537 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 65: 新最佳损失 5.7504 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 66: 新最佳损失 5.7428 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 67: 新最佳损失 5.7360 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 68: 新最佳损失 5.7225 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 69: 新最佳损失 5.7093 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 70: 新最佳损失 5.7077 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 71: 新最佳损失 5.7033 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 72: 新最佳损失 5.6933 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 73: 新最佳损失 5.6867 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 74: 新最佳损失 5.6790 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 75: 新最佳损失 5.6712 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 76: 新最佳损失 5.6690 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 77: 新最佳损失 5.6650 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 78: 新最佳损失 5.6541 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 79: 新最佳损失 5.6470 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 80: 新最佳损失 5.6438 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 81: 新最佳损失 5.6382 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 82: 新最佳损失 5.6323 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 83: 新最佳损失 5.6267 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 84: 新最佳损失 5.6196 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 85: 新最佳损失 5.6126 | 模型已保存
+2025-07-08 12:33:00 - GeneRegulationLogger - INFO - Epoch 86: 新最佳损失 5.6078 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 87: 新最佳损失 5.6044 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 88: 新最佳损失 5.5985 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 89: 新最佳损失 5.5903 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 90: 新最佳损失 5.5835 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 91: 新最佳损失 5.5789 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 92: 新最佳损失 5.5744 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 93: 新最佳损失 5.5682 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 94: 新最佳损失 5.5608 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 95: 新最佳损失 5.5543 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 96: 新最佳损失 5.5490 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 97: 新最佳损失 5.5449 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 98: 新最佳损失 5.5417 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 99: 新最佳损失 5.5405 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 101: 新最佳损失 5.5394 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 102: 新最佳损失 5.5272 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 103: 新最佳损失 5.5117 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 104: 新最佳损失 5.5081 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 106: 新最佳损失 5.5027 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 107: 新最佳损失 5.4876 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 108: 新最佳损失 5.4838 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 110: 新最佳损失 5.4802 | 模型已保存
+2025-07-08 12:33:01 - GeneRegulationLogger - INFO - Epoch 111: 新最佳损失 5.4715 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 112: 新最佳损失 5.4686 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 113: 新最佳损失 5.4632 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 114: 新最佳损失 5.4531 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 115: 新最佳损失 5.4489 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 116: 新最佳损失 5.4488 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 117: 新最佳损失 5.4439 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 118: 新最佳损失 5.4391 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 121: 新最佳损失 5.4353 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 122: 新最佳损失 5.4249 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 123: 新最佳损失 5.4154 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 124: 新最佳损失 5.4100 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 127: 新最佳损失 5.3996 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 128: 新最佳损失 5.3904 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 129: 新最佳损失 5.3893 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 130: 新最佳损失 5.3875 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 131: 新最佳损失 5.3821 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 132: 新最佳损失 5.3758 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 133: 新最佳损失 5.3690 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 134: 新最佳损失 5.3641 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 135: 新最佳损失 5.3620 | 模型已保存
+2025-07-08 12:33:02 - GeneRegulationLogger - INFO - Epoch 136: 新最佳损失 5.3585 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 137: 新最佳损失 5.3512 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 138: 新最佳损失 5.3448 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 139: 新最佳损失 5.3412 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 140: 新最佳损失 5.3377 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 141: 新最佳损失 5.3335 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 142: 新最佳损失 5.3286 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 143: 新最佳损失 5.3229 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 144: 新最佳损失 5.3177 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 145: 新最佳损失 5.3158 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 150: 新最佳损失 5.2944 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 153: 新最佳损失 5.2857 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 156: 新最佳损失 5.2736 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 159: 新最佳损失 5.2610 | 模型已保存
+2025-07-08 12:33:03 - GeneRegulationLogger - INFO - Epoch 162: 新最佳损失 5.2496 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 164: 新最佳损失 5.2461 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 165: 新最佳损失 5.2383 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 167: 新最佳损失 5.2337 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 168: 新最佳损失 5.2261 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 169: 新最佳损失 5.2249 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 170: 新最佳损失 5.2224 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 171: 新最佳损失 5.2136 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 172: 新最佳损失 5.2128 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 173: 新最佳损失 5.2108 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 174: 新最佳损失 5.2022 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 175: 新最佳损失 5.2017 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 176: 新最佳损失 5.1989 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 177: 新最佳损失 5.1916 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 178: 新最佳损失 5.1909 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 179: 新最佳损失 5.1876 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 180: 新最佳损失 5.1822 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 181: 新最佳损失 5.1800 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 182: 新最佳损失 5.1766 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 183: 新最佳损失 5.1730 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 184: 新最佳损失 5.1694 | 模型已保存
+2025-07-08 12:33:04 - GeneRegulationLogger - INFO - Epoch 185: 新最佳损失 5.1662 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 186: 新最佳损失 5.1639 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 187: 新最佳损失 5.1597 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 188: 新最佳损失 5.1563 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 189: 新最佳损失 5.1544 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 190: 新最佳损失 5.1508 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 191: 新最佳损失 5.1474 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 192: 新最佳损失 5.1451 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 193: 新最佳损失 5.1427 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 194: 新最佳损失 5.1408 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 195: 新最佳损失 5.1397 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 200: 新最佳损失 5.1303 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 201: 新最佳损失 5.1200 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 202: 新最佳损失 5.1166 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 205: 新最佳损失 5.1143 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 206: 新最佳损失 5.1066 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 207: 新最佳损失 5.1034 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 209: 新最佳损失 5.1034 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 210: 新最佳损失 5.0981 | 模型已保存
+2025-07-08 12:33:05 - GeneRegulationLogger - INFO - Epoch 211: 新最佳损失 5.0930 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 212: 新最佳损失 5.0914 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 213: 新最佳损失 5.0910 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 214: 新最佳损失 5.0883 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 215: 新最佳损失 5.0840 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 216: 新最佳损失 5.0809 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 217: 新最佳损失 5.0795 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 218: 新最佳损失 5.0778 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 219: 新最佳损失 5.0750 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 220: 新最佳损失 5.0717 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 221: 新最佳损失 5.0692 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 222: 新最佳损失 5.0675 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 223: 新最佳损失 5.0657 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 224: 新最佳损失 5.0631 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 225: 新最佳损失 5.0601 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 226: 新最佳损失 5.0575 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 227: 新最佳损失 5.0554 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 228: 新最佳损失 5.0537 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 229: 新最佳损失 5.0517 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 230: 新最佳损失 5.0495 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 231: 新最佳损失 5.0470 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 232: 新最佳损失 5.0447 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 233: 新最佳损失 5.0428 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 234: 新最佳损失 5.0416 | 模型已保存
+2025-07-08 12:33:06 - GeneRegulationLogger - INFO - Epoch 235: 新最佳损失 5.0415 | 模型已保存
+2025-07-08 12:33:07 - GeneRegulationLogger - INFO - Epoch 240: 新最佳损失 5.0370 | 模型已保存
+2025-07-08 12:33:07 - GeneRegulationLogger - INFO - Epoch 241: 新最佳损失 5.0276 | 模型已保存
+2025-07-08 12:33:07 - GeneRegulationLogger - INFO - Epoch 244: 新最佳损失 5.0269 | 模型已保存
+2025-07-08 12:33:07 - GeneRegulationLogger - INFO - Epoch 245: 新最佳损失 5.0191 | 模型已保存
+2025-07-08 12:33:07 - GeneRegulationLogger - INFO - Epoch 248: 新最佳损失 5.0161 | 模型已保存
+2025-07-08 12:33:07 - GeneRegulationLogger - INFO - Epoch 249: 新最佳损失 5.0097 | 模型已保存
+2025-07-08 12:33:07 - GeneRegulationLogger - INFO - === 阶段1完成: 最佳损失 5.0097 ===
+2025-07-08 12:33:07 - GeneRegulationLogger - INFO - === 阶段2：下游任务微调 (250轮) ===
+2025-07-08 12:33:08 - GeneRegulationLogger - INFO - Epoch 1: 新最佳模型 | AUC: 0.5040 | AUPRC: 0.5106
+2025-07-08 12:33:08 - GeneRegulationLogger - INFO - Epoch 2: 新最佳模型 | AUC: 0.5062 | AUPRC: 0.5123
+2025-07-08 12:33:09 - GeneRegulationLogger - INFO - Epoch 3: 新最佳模型 | AUC: 0.5111 | AUPRC: 0.5157
+2025-07-08 12:33:09 - GeneRegulationLogger - INFO - Epoch 4: 新最佳模型 | AUC: 0.5154 | AUPRC: 0.5191
+2025-07-08 12:33:10 - GeneRegulationLogger - INFO - Epoch 5: 新最佳模型 | AUC: 0.5161 | AUPRC: 0.5210
+2025-07-08 12:33:17 - GeneRegulationLogger - INFO - Epoch 17: 新最佳模型 | AUC: 0.5169 | AUPRC: 0.5212
+2025-07-08 12:33:22 - GeneRegulationLogger - INFO - Epoch 26: 新最佳模型 | AUC: 0.5209 | AUPRC: 0.5278
+2025-07-08 12:33:30 - GeneRegulationLogger - INFO - Epoch 38: 新最佳模型 | AUC: 0.5223 | AUPRC: 0.5283
+2025-07-08 12:33:37 - GeneRegulationLogger - INFO - Epoch 51: 新最佳模型 | AUC: 0.5273 | AUPRC: 0.5300
+2025-07-08 12:33:40 - GeneRegulationLogger - INFO - Epoch 55: 新最佳模型 | AUC: 0.5277 | AUPRC: 0.5320
+2025-07-08 12:33:52 - GeneRegulationLogger - INFO - Epoch 75: 新最佳模型 | AUC: 0.5279 | AUPRC: 0.5344
+2025-07-08 12:34:07 - GeneRegulationLogger - INFO - Epoch 100: 新最佳模型 | AUC: 0.5285 | AUPRC: 0.5338
+2025-07-08 12:34:13 - GeneRegulationLogger - INFO - Epoch 110: 新最佳模型 | AUC: 0.5287 | AUPRC: 0.5319
+2025-07-08 12:34:53 - GeneRegulationLogger - INFO - Epoch 177: 新最佳模型 | AUC: 0.5291 | AUPRC: 0.5346
+2025-07-08 12:35:37 - GeneRegulationLogger - INFO - === 最终测试评估 ===
+2025-07-08 12:35:37 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:35:37 - GeneRegulationLogger - INFO - 训练完成!
+2025-07-08 12:35:37 - GeneRegulationLogger - INFO -   - 耗时: 2.68分钟
+2025-07-08 12:35:37 - GeneRegulationLogger - INFO -   - 验证集最佳AUC: 0.5291
+2025-07-08 12:35:37 - GeneRegulationLogger - INFO -   - 验证集最佳AUPRC: 0.5346
+2025-07-08 12:35:37 - GeneRegulationLogger - INFO -   - 测试集AUC: 0.5206
+2025-07-08 12:35:37 - GeneRegulationLogger - INFO -   - 测试集AUPRC: 0.5272
+2025-07-08 12:35:37 - GeneRegulationLogger - INFO - 模型已保存至: ./model.pt
+2025-07-08 12:35:37 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO - 基因调控网络训练系统 - 启动
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO - 配置参数:
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO -   - 网络类型: Specific
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO -   - 细胞类型: mHSC-L
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO -   - 转录因子: 500
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO -   - 训练轮数: 500
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO -   - 批次大小: 32
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO -   - 学习率: 0.001
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO - === 数据准备 ===
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO - 数据属性验证通过
+2025-07-08 12:36:31 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO - 基因调控网络训练系统 - 启动
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO - 配置参数:
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO -   - 网络类型: Specific
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO -   - 细胞类型: mHSC-L
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO -   - 转录因子: 500
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO -   - 训练轮数: 500
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO -   - 批次大小: 32
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO -   - 学习率: 0.001
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO - === 数据准备 ===
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO - 数据属性验证通过
+2025-07-08 12:38:51 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO - 基因调控网络训练系统 - 启动
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO - ================================================================================
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO - 配置参数:
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO -   - 网络类型: Specific
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO -   - 细胞类型: mHSC-L
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO -   - 转录因子: 500
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO -   - 训练轮数: 500
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO -   - 批次大小: 32
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO -   - 学习率: 0.001
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO - === 数据准备 ===
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO - 数据属性验证通过
+2025-07-08 12:39:49 - GeneRegulationLogger - INFO - 划分数据集: 训练80.0%, 验证10.0%, 测试10.0%
