@@ -16,7 +16,7 @@ class GeneRegulationDataset(InMemoryDataset):
     def __init__(self, root=None, transform=None):
         self.root = root or config.DATA_ROOT
         super().__init__(self.root, transform)
-        self.data, self.slices = torch.load(self.processed_paths[0],weights_only=False)
+        self.data, self.slices = torch.load(self.processed_paths[0], weights_only=False)
     
     @property
     def raw_dir(self):
@@ -55,7 +55,7 @@ class GeneRegulationDataset(InMemoryDataset):
         
         # 基因名称映射
         genes = expr_df.iloc[:, 0].tolist()
-        gene_to_idx = {gene: idx for idx, gene in enumerate(genes)}
+        name_to_idx = {gene: idx for idx, gene in enumerate(genes)}
         gene_ids = torch.arange(len(genes))
         
         # 特征处理
@@ -67,22 +67,22 @@ class GeneRegulationDataset(InMemoryDataset):
         edges = []
         for _, row in network_df.iterrows():
             gene1, gene2 = row["Gene1"], row["Gene2"]
-            if gene1 in gene_to_idx and gene2 in gene_to_idx:
-                edges.append([gene_to_idx[gene1], gene_to_idx[gene2]])
+            if gene1 in name_to_idx and gene2 in name_to_idx:
+                edges.append([name_to_idx[gene1], name_to_idx[gene2]])
         
         edge_index = torch.tensor(edges, dtype=torch.long).t().contiguous()
         
         # 生成因果视图
-        causal_features = self._generate_causal_view(features)
+        causal_view = self._generate_causal_view(features)
         
         # 创建数据对象
         graph_data = Data(
-            original_features=features,      # 原始视图
-            causal_features=causal_features, # 因果视图
-            edge_index=edge_index,           # 基因互作网络
-            gene_ids=gene_ids,               # 基因ID
-            feature_dim=features.shape[1],   # 特征维度
-            num_nodes=len(genes)             # 节点数量
+            x=features,              # 原始视图
+            causal_view=causal_view,  # 因果视图
+            edge_index=edge_index,    # 基因互作网络
+            gene_ids=gene_ids,        # 基因ID
+            feature_dim=features.shape[1],  # 特征维度
+            num_nodes=len(genes)       # 节点数量
         )
         
         # 保存处理结果
@@ -92,7 +92,7 @@ class GeneRegulationDataset(InMemoryDataset):
         """生成因果视图（基于反事实增强）"""
         # 识别少数样本（表达量低于平均值的基因）
         minority_mask = (features.mean(dim=1) < features.mean())
-        causal_features = features.clone()
+        causal_view = features.clone()
         
         if minority_mask.any():
             majority_indices = torch.where(~minority_mask)[0]
@@ -104,12 +104,12 @@ class GeneRegulationDataset(InMemoryDataset):
             _, nn_indices = dist_matrix.min(dim=1)
             
             # 生成反事实样本
-            synthetic = features[minority_indices] * (1 - config.CAUSAL_WEIGHT) + \
-                        features[majority_indices[nn_indices]] * config.CAUSAL_WEIGHT
+            synthetic = features[minority_indices] * (1 - config.ALIGN_WEIGHT) + \
+                        features[majority_indices[nn_indices]] * config.ALIGN_WEIGHT
             
-            causal_features[minority_indices] = synthetic
+            causal_view[minority_indices] = synthetic
         
-        return causal_features
+        return causal_view
 
 def split_dataset(data):
     """
@@ -151,8 +151,8 @@ def split_dataset(data):
 
 def calculate_split_ratios(density):
     """根据网络密度计算数据集划分比例"""
-    train_ratio = max(0.7 - density * 0.5, 0.5)  # 确保最小0.5
-    test_ratio = min(0.15 + density * 0.25, 0.3)  # 确保最大0.3
+    train_ratio = max(0.7 - density * 0.2, 0.5)  # 确保最小0.5
+    test_ratio = min(0.15 + density * 0.1, 0.3)  # 确保最大0.3
     val_ratio = 1.0 - train_ratio - test_ratio
     
     if val_ratio < 0.05:
@@ -168,8 +168,6 @@ def calculate_split_ratios(density):
 def create_subset(original_data, edge_index):
     """创建子集数据对象"""
     subset = Data()
-    
-    # 复制所有属性，除了边索引
     for key in original_data.keys():
         if key != 'edge_index':
             attr = getattr(original_data, key)
@@ -203,22 +201,22 @@ def negative_sampling(edge_index, num_nodes, num_neg_samples, existing_edges=Non
     if num_pos_edges >= total_possible_edges:
         return torch.empty((2, 0), dtype=torch.long)
     
-    # 使用更高效的负采样方法
-    row, col = edge_index
-    pos_set = set(zip(row.tolist(), col.tolist()))
+    row = torch.arange(num_nodes).repeat(num_nodes)
+    col = torch.repeat_interleave(torch.arange(num_nodes), num_nodes)
+    mask = row < col
+    all_possible = torch.stack([row[mask], col[mask]], dim=0)
     
-    neg_edges = []
-    while len(neg_edges) < num_neg_samples:
-        u = torch.randint(0, num_nodes, (num_neg_samples,))
-        v = torch.randint(0, num_nodes, (num_neg_samples,))
-        
-        for i in range(num_neg_samples):
-            if u[i] != v[i] and (u[i].item(), v[i].item()) not in pos_set:
-                neg_edges.append([u[i].item(), v[i].item()])
-                if len(neg_edges) == num_neg_samples:
-                    break
+    if existing_edges is None:
+        existing_edges = edge_index
     
-    if not neg_edges:
+    pos_set = set(map(tuple, existing_edges.t().tolist()))
+    neg_mask = [tuple(edge.tolist()) not in pos_set for edge in all_possible.t()]
+    neg_edges = all_possible[:, neg_mask]
+    
+    num_available = neg_edges.size(1)
+    if num_available == 0:
         return torch.empty((2, 0), dtype=torch.long)
     
-    return torch.tensor(neg_edges, dtype=torch.long).t().contiguous()
+    num_samples = min(num_neg_samples, num_available)
+    indices = torch.randperm(num_available)[:num_samples]
+    return neg_edges[:, indices].contiguous()
