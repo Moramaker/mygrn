@@ -4,7 +4,7 @@ from sklearn.metrics import roc_auc_score, average_precision_score
 
 def setup_logger(log_dir):
     """初始化日志"""
-    # 创建日志目录（如果不存在）
+    # 创建日志目录
     os.makedirs(log_dir, exist_ok=True)
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.INFO)

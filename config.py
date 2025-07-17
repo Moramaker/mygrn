@@ -1,29 +1,29 @@
 class Config:
     """全局配置类，包含所有模型和训练参数"""
     
-    # === 后门调整器参数 ===
-    ADJUSTER_HIDDEN_DIM = 256  # 调整器隐藏层维度
-    ADJUSTER_OUTPUT_DIM = 128  # 调整器输出维度
-    
-    # === 核心模型参数 ===
-    HIDDEN_DIM = 128           # GAT隐藏层维度
-    OUTPUT_DIM = 64            # 输出表示维度
-    GAT_HEADS = 4              # GAT注意力头数
+    # === 模型架构参数 ===
+    HIDDEN_DIM = 128           # 隐藏层维度
+    ENCODER_OUTPUT_DIM = 64    # 编码器输出维度
+    ADJUSTER_HIDDEN_DIM = 128  # 调整器隐藏层维度 (降低以加速)
+    ADJUSTER_OUTPUT_DIM = 64   # 调整器输出维度 (降低以加速)
+    GAT_HEADS = 2              # GAT注意力头数 (减少以加速)
     GAT_DROPOUT = 0.1          # GAT丢弃率
-    PROJ_LAYERS = 2            # 投影层数
     
     # === 对比学习参数 ===
-    TEMPERATURE = 0.07         # 对比损失的温度参数
-    CONTRAST_WEIGHT = 1.0      # 对比损失权重
-    ALIGN_WEIGHT = 0.4         # 视图对齐损失权重
-    BACKDOOR_WEIGHT = 0.3      # 后门调整损失权重
+    TEMPERATURE = 0.07         # 对比损失温度参数
+    CONTRASTIVE_WEIGHT = 1.0   # 对比损失权重
+    ALIGNMENT_WEIGHT = 0.4     # 视图对齐损失权重
+    CAUSAL_WEIGHT = 0.3        # 因果调整损失权重
     
     # === 训练参数 ===
-    EPOCHS = 1000               # 总训练轮数
-    CONTRAST_RATIO = 0.8       # 对比学习阶段比例
-    BATCH_SIZE = 1             # 批次大小
-    LR = 0.001                 # 学习率
+    EPOCHS = 10000               # 减少总轮数以加速
+    CONTRASTIVE_RATIO = 0.7    # 对比学习阶段比例
+    BATCH_SIZE = 16             # 增大批次大小以加速 (原为1)
+    LEARNING_RATE = 0.0001      # 学习率
     WEIGHT_DECAY = 1e-5        # 权重衰减
+    
+    # === 数据加载优化 ===
+    NUM_WORKERS = 4            # 数据加载工作线程数
     
     # === 数据集配置 ===
     DATA_ROOT = "./DATASET/single-cell"  # 数据集根目录
@@ -34,6 +34,9 @@ class Config:
     # === 日志与保存 ===
     LOG_DIR = "./logs"
     MODEL_SAVE_PATH = "./model.pt"
+    
+    # === 早停配置 ===
+    EARLY_STOPPING_PATIENCE = 100  # 早停等待轮数
     
     # === 网络密度预设 ===
     DENSITY_PRESETS = {
