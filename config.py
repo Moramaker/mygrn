@@ -7,6 +7,15 @@ class Config:
     GAT_HEADS = 4              # GAT注意力头数
     GAT_DROPOUT = 0.1          # GAT丢弃率
     PROJ_LAYERS = 2            # 投影层数
+
+    # === CVAE反事实生成配置 ===
+    USE_CVAE = True               # 是否使用CVAE生成反事实样本
+    CVAE_HIDDEN_DIM = 128         # CVAE隐藏层维度
+    CVAE_LATENT_DIM = 32          # 潜在空间维度
+    CVAE_EPOCHS = 300             # 训练轮次
+    CVAE_LR = 0.001               # 学习率
+    CVAE_KL_WEIGHT = 0.1          # KL散度权重（平衡重构损失）
+    ALIGN_WEIGHT = 0.3            # 原始插值方法的权重（备用）
     
     # === 对比学习参数 ===
     TEMPERATURE = 0.07         # 对比损失的温度参数
@@ -14,10 +23,10 @@ class Config:
     ALIGN_WEIGHT = 0.4         # 视图对齐损失权重
     
     # === 训练参数 ===
-    EPOCHS = 2000               # 总训练轮数
+    EPOCHS = 1000              # 总训练轮数
     CONTRAST_RATIO = 0.9       # 对比学习阶段比例
     BATCH_SIZE = 32            # 批次大小
-    LR = 0.0001                 # 学习率
+    LR = 0.001                 # 学习率
     WEIGHT_DECAY = 1e-5        # 权重衰减
     
     # === 数据集配置 ===
