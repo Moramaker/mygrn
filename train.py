@@ -21,8 +21,7 @@ def main():
     data = dataset[0]
     
     train_data, val_data, test_data, density, ratios = split_dataset(data)
-    train_ratio, val_ratio, test_ratio = ratios
-    logger.info(f"网络密度: {density:.4f}, 动态划分比例: 训练{train_ratio*100:.1f}%, 验证{val_ratio*100:.1f}%, 测试{test_ratio*100:.1f}%")
+    logger.info(f"网络密度: {density:.4f}, 动态划分比例: 训练{ratios[0]*100:.1f}%, 验证{ratios[1]*100:.1f}%, 测试{ratios[2]*100:.1f}%")
     
     train_loader = DataLoader([train_data], batch_size=config.BATCH_SIZE, shuffle=True)
     val_loader = DataLoader([val_data], batch_size=config.BATCH_SIZE, shuffle=False)
@@ -95,6 +94,7 @@ def main():
                 edge_index=batch.edge_index,
                 num_nodes=batch.num_nodes,
                 num_neg_samples=num_neg_samples,
+                density=density,
                 existing_edges=data.edge_index
             )
             

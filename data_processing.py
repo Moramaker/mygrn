@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import torch
+import torch.nn as nn
 import torch.nn.functional as F
 from torch_geometric.data import InMemoryDataset, Data
 from torch_geometric.loader import DataLoader
@@ -11,12 +12,77 @@ import logging
 # 配置日志
 logger = logging.getLogger(__name__)
 
+# === 添加CVAE相关实现 ===
+class CVAEGeneGenerator(nn.Module):
+    """条件变分自编码器，用于生成基因表达的反事实样本"""
+    def __init__(self, input_dim, hidden_dim=128, latent_dim=32):
+        super().__init__()
+        
+        # 编码器
+        self.encoder = nn.Sequential(
+            nn.Linear(input_dim + 1, hidden_dim),  # +1 为条件输入（平均表达量）
+            nn.BatchNorm1d(hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, hidden_dim // 2),
+            nn.BatchNorm1d(hidden_dim // 2),
+            nn.ReLU()
+        )
+        
+        self.mean_fc = nn.Linear(hidden_dim // 2, latent_dim)
+        self.logvar_fc = nn.Linear(hidden_dim // 2, latent_dim)
+        
+        # 解码器
+        self.decoder = nn.Sequential(
+            nn.Linear(latent_dim + 1, hidden_dim // 2),  # +1 为条件输入
+            nn.BatchNorm1d(hidden_dim // 2),
+            nn.ReLU(),
+            nn.Linear(hidden_dim // 2, hidden_dim),
+            nn.BatchNorm1d(hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, input_dim)
+        )
+    
+    def encode(self, x, c):
+        """将输入和条件编码为潜在空间的均值和方差"""
+        inputs = torch.cat([x, c.unsqueeze(1)], dim=1)
+        h = self.encoder(inputs)
+        return self.mean_fc(h), self.logvar_fc(h)
+    
+    def reparameterize(self, mu, logvar):
+        """重参数化技巧，从正态分布中采样"""
+        std = torch.exp(0.5 * logvar)
+        eps = torch.randn_like(std)
+        return mu + eps * std
+    
+    def decode(self, z, c):
+        """将潜在变量和条件解码为重构样本"""
+        inputs = torch.cat([z, c.unsqueeze(1)], dim=1)
+        return self.decoder(inputs)
+    
+    def forward(self, x, c):
+        """模型前向传播"""
+        mu, logvar = self.encode(x, c)
+        z = self.reparameterize(mu, logvar)
+        return self.decode(z, c), mu, logvar
+    
+    def generate_counterfactual(self, x, target_c):
+        """生成反事实样本：给定原始样本x，生成目标条件target_c下的样本"""
+        with torch.no_grad():
+            # 使用原始样本的条件进行编码
+            original_c = x.mean(dim=1)
+            mu, logvar = self.encode(x, original_c)
+            z = self.reparameterize(mu, logvar)
+            # 使用目标条件进行解码
+            return self.decode(z, target_c)
+
+
 class GeneRegulationDataset(InMemoryDataset):
     """基因调控网络数据集"""
-    def __init__(self, root=None, transform=None):
+    def __init__(self, root=None, transform=None, use_cvae=True):
         self.root = root or config.DATA_ROOT
+        self.use_cvae = use_cvae  # 是否使用CVAE生成反事实样本
         super().__init__(self.root, transform)
-        self.data, self.slices = torch.load(self.processed_paths[0], weights_only=False)
+        self.data, self.slices = torch.load(self.processed_paths[0])
     
     @property
     def raw_dir(self):
@@ -59,9 +125,8 @@ class GeneRegulationDataset(InMemoryDataset):
         gene_ids = torch.arange(len(genes))
         
         # 特征处理
-        raw_features = expr_df.iloc[:, 1:].values
-        features = torch.tensor(raw_features, dtype=torch.float32)
-        features = F.normalize(features, dim=1)
+        features = torch.tensor(expr_df.iloc[:, 1:].values, dtype=torch.float32)
+        features = normalize_expression_data(features)
         
         # 构建图结构
         edges = []
@@ -72,7 +137,7 @@ class GeneRegulationDataset(InMemoryDataset):
         
         edge_index = torch.tensor(edges, dtype=torch.long).t().contiguous()
         
-        # 生成因果视图
+        # 生成因果视图（使用CVAE或原始方法）
         causal_view = self._generate_causal_view(features)
         
         # 创建数据对象
@@ -88,40 +153,90 @@ class GeneRegulationDataset(InMemoryDataset):
         # 保存处理结果
         torch.save(self.collate([graph_data]), self.processed_paths[0])
     
+    def _train_cvae(self, features):
+        """训练CVAE模型（仅在需要时训练）"""
+        input_dim = features.shape[1]
+        model = CVAEGeneGenerator(
+            input_dim=input_dim,
+            hidden_dim=config.CVAE_HIDDEN_DIM,
+            latent_dim=config.CVAE_LATENT_DIM
+        )
+        optimizer = torch.optim.Adam(model.parameters(), lr=config.CVAE_LR)
+        
+        # 条件变量：每个样本的平均表达量
+        conditions = features.mean(dim=1)
+        
+        # 训练循环
+        model.train()
+        for epoch in range(config.CVAE_EPOCHS):
+            # 前向传播
+            recon_x, mu, logvar = model(features, conditions)
+            
+            # 计算损失
+            recon_loss = F.mse_loss(recon_x, features)
+            kl_loss = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
+            kl_loss /= features.size(0) * input_dim  # 标准化KL损失
+            
+            # 总损失（平衡重构和KL散度）
+            loss = recon_loss + config.CVAE_KL_WEIGHT * kl_loss
+            
+            # 反向传播
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            
+            # 日志输出
+            if (epoch + 1) % 50 == 0:
+                logger.info(f"CVAE训练 Epoch [{epoch+1}/{config.CVAE_EPOCHS}], 损失: {loss.item():.4f}")
+        
+        return model
+    
     def _generate_causal_view(self, features):
-        """生成因果视图（基于反事实增强）"""
+        """生成因果视图（基于CVAE的反事实增强）"""
         # 识别少数样本（表达量低于平均值的基因）
         minority_mask = (features.mean(dim=1) < features.mean())
         causal_view = features.clone()
         
-        if minority_mask.any():
+        if not minority_mask.any():
+            return causal_view
+        
+        # 如果不使用CVAE，使用原始插值方法
+        if not self.use_cvae:
             majority_indices = torch.where(~minority_mask)[0]
             minority_indices = torch.where(minority_mask)[0]
             
-            # 计算少数样本与多数样本的距离矩阵
-            dist_matrix = torch.cdist(features[minority_indices], 
-                                     features[majority_indices])
+            # 计算最近邻
+            dist_matrix = torch.cdist(features[minority_indices], features[majority_indices])
             _, nn_indices = dist_matrix.min(dim=1)
             
-            # 生成反事实样本
+            # 插值生成反事实样本
             synthetic = features[minority_indices] * (1 - config.ALIGN_WEIGHT) + \
                         features[majority_indices[nn_indices]] * config.ALIGN_WEIGHT
-            
             causal_view[minority_indices] = synthetic
+            return causal_view
         
+        # 使用CVAE生成反事实样本
+        logger.info(f"使用CVAE生成反事实样本，少数样本数量: {minority_mask.sum().item()}")
+        
+        # 训练CVAE模型
+        cvae_model = self._train_cvae(features)
+        
+        # 生成目标条件（多数样本的平均表达量）
+        majority_mean = features[~minority_mask].mean(dim=1).mean()
+        target_conditions = torch.full_like(features[minority_mask].mean(dim=1), majority_mean)
+        
+        # 生成反事实样本
+        cvae_model.eval()
+        counterfactuals = cvae_model.generate_counterfactual(
+            features[minority_mask], 
+            target_conditions
+        )
+        
+        # 替换少数样本
+        causal_view[minority_mask] = counterfactuals
         return causal_view
 
 def split_dataset(data):
-    """
-    将基因调控网络数据集划分为训练集、验证集和测试集
-    
-    参数:
-        data: 完整的图数据对象 (Data)
-        
-    返回:
-        train_data, val_data, test_data: 划分后的Data对象
-        density: 网络密度
-    """
     edge_index = data.edge_index
     num_edges = edge_index.size(1)
     num_nodes = data.num_nodes
@@ -151,17 +266,29 @@ def split_dataset(data):
 
 def calculate_split_ratios(density):
     """根据网络密度计算数据集划分比例"""
-    train_ratio = max(0.7 - density * 0.2, 0.5)  # 确保最小0.5
-    test_ratio = min(0.15 + density * 0.1, 0.3)  # 确保最大0.3
+    x = (torch.tensor(density, dtype=torch.float32) - 0.2) * 10
+    sigmoid_value = torch.sigmoid(x).item()
+    
+    # 基础比例配置
+    base_train = 0.7
+    base_test = 0.2
+    
+    # 根据sigmoid值调整比例
+    train_ratio = base_train - (sigmoid_value * 0.3)
+    test_ratio = base_test + (sigmoid_value * 0.15)
     val_ratio = 1.0 - train_ratio - test_ratio
     
-    if val_ratio < 0.05:
-        train_ratio = train_ratio * 0.9
-        test_ratio = test_ratio * 0.9
-        val_ratio = 1.0 - train_ratio - test_ratio
+    # 确保各比例在合理范围内
+    train_ratio = max(min(train_ratio, 0.8), 0.4)
+    test_ratio = max(min(test_ratio, 0.4), 0.1)
+    val_ratio = max(min(val_ratio, 0.2), 0.1)
     
-    logger.info(f"根据密度 {density:.4f} 计算划分比例: "
-                f"训练 {train_ratio:.2f}, 验证 {val_ratio:.2f}, 测试 {test_ratio:.2f}")
+    # 确保验证集比例不低于15%
+    if val_ratio < 0.15:
+        shortfall = 0.15 - val_ratio
+        train_ratio -= shortfall * (train_ratio / (train_ratio + test_ratio))
+        test_ratio -= shortfall * (test_ratio / (train_ratio + test_ratio))
+        val_ratio = 0.15
     
     return train_ratio, val_ratio, test_ratio
 
@@ -179,44 +306,64 @@ def create_subset(original_data, edge_index):
     subset.edge_index = edge_index
     return subset
 
-def negative_sampling(edge_index, num_nodes, num_neg_samples, existing_edges=None):
-    """
-    安全高效的负采样
-    
-    参数:
-        edge_index: 正样本边索引 (2, num_edges)
-        num_nodes: 节点数量
-        num_neg_samples: 需要采样的负样本数量
-        existing_edges: 需要排除的边 (默认包含所有正样本边)
-        
-    返回:
-        负样本边的索引张量 (2, num_neg_samples)
-    """
+def negative_sampling(edge_index, num_nodes, num_neg_samples, density=None, existing_edges=None):
     if num_nodes < 2 or num_neg_samples <= 0:
         return torch.empty((2, 0), dtype=torch.long)
     
-    total_possible_edges = num_nodes * (num_nodes - 1) // 2
-    num_pos_edges = edge_index.size(1)
+    # 使用提供的密度或计算密度
+    if density is None:
+        if existing_edges is None:
+            existing_edges = edge_index
+        density = existing_edges.size(1) / (num_nodes * (num_nodes - 1) / 2)
     
-    if num_pos_edges >= total_possible_edges:
-        return torch.empty((2, 0), dtype=torch.long)
+    # 根据密度调整采样策略
+    if density < 0.1:  # 低密度网络
+        # 对低密度网络使用拒绝采样，增加尝试次数
+        pos_set = set(map(tuple, existing_edges.t().tolist()))
+        neg_edges = []
+        max_tries = min(num_neg_samples * 20, 1000000)  # 最大尝试次数
+        
+        while len(neg_edges) < num_neg_samples and len(pos_set) < (num_nodes * (num_nodes - 1) // 2):
+            # 随机生成边
+            u = torch.randint(0, num_nodes, (1,)).item()
+            v = torch.randint(0, num_nodes, (1,)).item()
+            
+            # 确保 u < v 且不是正边
+            if u < v and (u, v) not in pos_set:
+                neg_edges.append((u, v))
+        
+        if neg_edges:
+            return torch.tensor(neg_edges, dtype=torch.long).t().contiguous()
+        else:
+            return torch.empty((2, 0), dtype=torch.long)
     
-    row = torch.arange(num_nodes).repeat(num_nodes)
-    col = torch.repeat_interleave(torch.arange(num_nodes), num_nodes)
-    mask = row < col
-    all_possible = torch.stack([row[mask], col[mask]], dim=0)
+    else:  # 高密度网络
+        # 对高密度网络使用优化的全枚举法
+        row = torch.arange(num_nodes).repeat(num_nodes)
+        col = torch.repeat_interleave(torch.arange(num_nodes), num_nodes)
+        mask = row < col
+        all_possible = torch.stack([row[mask], col[mask]], dim=0)
+        
+        pos_set = set(map(tuple, existing_edges.t().tolist()))
+        neg_mask = [tuple(edge.tolist()) not in pos_set for edge in all_possible.t()]
+        neg_edges = all_possible[:, neg_mask]
+        
+        num_available = neg_edges.size(1)
+        if num_available == 0:
+            return torch.empty((2, 0), dtype=torch.long)
+        
+        num_samples = min(num_neg_samples, num_available)
+        indices = torch.randperm(num_available)[:num_samples]
+        return neg_edges[:, indices].contiguous()
+
+def normalize_expression_data(expression_data):
+    # 对数变换
+    log_transformed = torch.log1p(expression_data)
     
-    if existing_edges is None:
-        existing_edges = edge_index
+    # Z-score标准化（行归一化）
+    mean = log_transformed.mean(dim=1, keepdim=True)
+    std = log_transformed.std(dim=1, keepdim=True)
+    std = torch.clamp(std, min=1e-7) 
     
-    pos_set = set(map(tuple, existing_edges.t().tolist()))
-    neg_mask = [tuple(edge.tolist()) not in pos_set for edge in all_possible.t()]
-    neg_edges = all_possible[:, neg_mask]
-    
-    num_available = neg_edges.size(1)
-    if num_available == 0:
-        return torch.empty((2, 0), dtype=torch.long)
-    
-    num_samples = min(num_neg_samples, num_available)
-    indices = torch.randperm(num_available)[:num_samples]
-    return neg_edges[:, indices].contiguous()
+    normalized = (log_transformed - mean) / std
+    return normalized
